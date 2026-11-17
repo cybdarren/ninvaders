@@ -601,6 +601,7 @@ void refreshScreen()
 static void finish(int sig)
 {
 	endwin();	// <curses.h> reset terminal into proper non-visual mode
+	writeHighScore(highscore);	// save highscore on Ctrl-C too
 	exit(0);
 }
 

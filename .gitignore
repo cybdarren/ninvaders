@@ -1,0 +1,6 @@
+# Build output
+*.o
+nInvaders
+
+# Saved high score table
+highscore

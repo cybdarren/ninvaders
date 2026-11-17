@@ -93,6 +93,7 @@ static void evaluateCommandLine(int argc, char **argv)
 static void finish(int sig)
 {
         endwin();
+	writeHighScore(highscore);	// save highscore before exiting
 	showGplShort();
 	
 	fprintf(stderr,"\n");
@@ -351,10 +352,7 @@ int main(int argc, char **argv)
 	do {
 		// do movements and key-checking
 		readInput();
-	} while (0 == 0);
-
-	// save highscore
-	writeHighScore(highscore);
+	} while (0 == 0);	// never ends: the game exits via finish(), which saves the highscore
 	
 	return 0;
 }
